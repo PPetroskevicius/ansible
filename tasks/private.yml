@@ -1,0 +1,6 @@
+---
+- name: Run playbook from private repository
+  ansible.builtin.command: pwd
+  register: "output"
+
+- debug: var=output.stdout_lines
