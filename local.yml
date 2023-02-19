@@ -4,6 +4,7 @@
   vars:
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    public_key: "https://github.com/ppetroskevicius.keys"
 
   tasks:
     - include: tasks/ssh.yml
