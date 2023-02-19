@@ -37,7 +37,7 @@ sudo apt-get install -y curl git software-properties-common ansible
 It seems `ansible-pull` does not support interactive mode by design, but passing vault password by file (or executable that outputs password) is supported.
 
 ```sh
-ansible-pull -U https://github.com/ppetroskevicius/ansible.git --vault-password-file ~/vault_pass.txt
+ansible-pull -U https://github.com/ppetroskevicius/ansible.git --ask-become-pass --vault-password-file ~/vault_pass.txt
 ```
 
 Save the passphrase of the private SSH key into ssh-agent:
