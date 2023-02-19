@@ -4,3 +4,7 @@
   register: "output"
 
 - debug: var=output.stdout_lines
+
+- name: Run remote playbook
+  ansible.builtin.command: ansible-pull -U https://github.com/ppetroskevicius/ansible-private.git 
+  
