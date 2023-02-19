@@ -35,5 +35,11 @@ sudo apt-get install -y curl git software-properties-common ansible
 ### Pull ansible playbook and execute on a local host
 
 ```sh
-sudo ansible-pull -U https://github.com/ppetroskevicius/ansible.git
+ansible-pull -U https://github.com/ppetroskevicius/ansible.git --ask-become-pass --ask-vault-pass
+```
+
+or
+
+```sh
+ansible-playbook -t dotfiles local.yml --ask-become-pass --ask-vault-pass
 ```

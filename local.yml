@@ -1,11 +1,10 @@
 ---
-  - name: "Kick-start new environment setup"
-    hosts: localhost
-    become: true
-    tasks:
+- name: "Kick-start new environment setup"
+  hosts: localhost
+  vars:
+    source_key: "./.ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
 
-    - name: Install zsh
-      apt: name=zsh
-      register: "output"
-    
-    - debug: var=output.stdout_lines
+  tasks:
+    - include: tasks/ssh.yml
+    - include: tasks/private.yml
