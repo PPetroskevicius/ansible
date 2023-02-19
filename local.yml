@@ -1,0 +1,11 @@
+---
+  - name: "Kick-start new environment setup"
+    hosts: localhost
+    become: true
+    tasks:
+
+    - name: Install zsh
+      apt: name=zsh
+      register: "output"
+    
+    - debug: var=output.stdout_lines
