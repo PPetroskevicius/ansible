@@ -34,7 +34,7 @@ sudo apt-get install -y curl git software-properties-common ansible
 
 ### Pull ansible playbook and execute on a local host
 
-It seems ansible-pull does not support interactive mode by design, but passing vault password by file (or executable that outputs password) is supported.
+It seems `ansible-pull` does not support interactive mode by design, but passing vault password by file (or executable that outputs password) is supported.
 
 ```sh
 ansible-pull -U https://github.com/ppetroskevicius/ansible.git --vault-password-file ~/vault_pass.txt
