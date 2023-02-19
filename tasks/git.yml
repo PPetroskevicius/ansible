@@ -9,4 +9,4 @@
   git_config:
     name: user.name
     scope: global
-    value "Petras Petroskevicius"
+    value: "Petras Petroskevicius"
