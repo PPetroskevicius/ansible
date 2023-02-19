@@ -40,6 +40,12 @@ It seems `ansible-pull` does not support interactive mode by design, but passing
 ansible-pull -U https://github.com/ppetroskevicius/ansible.git --vault-password-file ~/vault_pass.txt
 ```
 
+Save the passphrase of the private SSH key into ssh-agent:
+```sh
+ssh-agent bash
+ssh-add ~/.ssh/id_ed25519
+```
+
 Below does not seem to be supported by design. 
 
 ```sh
