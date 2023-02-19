@@ -7,7 +7,7 @@
     public_key: "https://github.com/ppetroskevicius.keys"
 
   tasks:
-    - include: tasks/ssh.yml
-    - include: tasks/git.yml
-    - include: tasks/dotfiles.yml
-    - include: tasks/private.yml
+    - import_tasks: tasks/ssh.yml
+    - import_tasks: tasks/git.yml
+    - import_tasks: tasks/dotfiles.yml
+    - import_tasks: tasks/private.yml
