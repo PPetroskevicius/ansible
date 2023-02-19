@@ -8,4 +8,6 @@
 
   tasks:
     - include: tasks/ssh.yml
+    - include: tasks/git.yml
+    - include: tasks/dotfiles.yml
     - include: tasks/private.yml

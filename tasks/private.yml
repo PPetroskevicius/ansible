@@ -1,10 +1,10 @@
 ---
-- name: Run playbook from private repository
-  ansible.builtin.command: pwd
-  register: "output"
-
-- debug: var=output.stdout_lines
-
-- name: Run remote playbook
-  ansible.builtin.command: ansible-pull -U https://github.com/ppetroskevicius/ansible-private.git 
-  
+- name: Cloning playbooks from private repository
+  ansible.builtin.git:
+    repo: "git@github.com:ppetroskevicius/ansible-private.git"
+    dest: "~/ansible-private"
+    key_file: "~/.ssh/id_ed25519"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main  
