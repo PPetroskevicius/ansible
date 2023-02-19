@@ -1,5 +1,6 @@
 ---
 - name: Installing stow
+  become: true
   apt: name=stow
 
 - name: Cloning dotfiles
