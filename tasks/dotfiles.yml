@@ -1,7 +1,10 @@
 ---
 - name: Installing stow
   become: true
-  apt: name=stow
+  apt: 
+    name:
+      - stow
+      - make
 
 - name: Cloning dotfiles
   ansible.builtin.git:
@@ -13,5 +16,8 @@
     accept_hostkey: yes
     version: main
 
+- name: Remove old dotfiles
+  shell: rm ~/.gitconfig ~/.bashrc
+
 - name: Stow dotfiles
-  shell: cd ~/.dotfiles
+  shell: cd ~/.dotfiles && ./make
