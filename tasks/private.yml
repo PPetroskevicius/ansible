@@ -1,8 +1,0 @@
----
-- name: Cloning playbooks from private repository
-  git:
-    repo: "git@github.com:ppetroskevicius/ansible-private.git"
-    dest: "~/ansible-private"
-    key_file: "~/.ssh/id_ed25519"
-    update: yes
-    accept_hostkey: yes
