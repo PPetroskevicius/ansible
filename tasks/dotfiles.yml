@@ -16,7 +16,11 @@
     version: main
 
 - name: Remove old dotfiles
-  shell: rm ~/.gitconfig ~/.bashrc
+  ansible.builtin.file:
+    path: 
+      - ~/.gitconfig
+      - ~/.bashrc
+    state: absent
 
 - name: Stow dotfiles (build the default target)
   make:
