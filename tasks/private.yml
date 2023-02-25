@@ -1,10 +1,8 @@
 ---
 - name: Cloning playbooks from private repository
-  ansible.builtin.git:
+  git:
     repo: "git@github.com:ppetroskevicius/ansible-private.git"
     dest: "~/ansible-private"
     key_file: "~/.ssh/id_ed25519"
-    recursive: yes
     update: yes
     accept_hostkey: yes
-    version: main  
