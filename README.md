@@ -42,8 +42,8 @@ ansible-pull -U https://github.com/ppetroskevicius/ansible.git --ask-become-pass
 
 Save the passphrase of the private SSH key into ssh-agent:
 ```sh
-sudo ssh-agent bash
-sudo ssh-add ~/.ssh/id_ed25519
+ssh-agent bash
+ssh-add ~/.ssh/id_ed25519
 ```
 
 Below does not seem to be supported by design. 
