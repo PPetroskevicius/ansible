@@ -4,7 +4,6 @@
   apt: 
     name:
       - stow
-      - make
 
 - name: Cloning dotfiles
   ansible.builtin.git:
@@ -19,5 +18,6 @@
 - name: Remove old dotfiles
   shell: rm ~/.gitconfig ~/.bashrc
 
-- name: Stow dotfiles
-  shell: cd ~/.dotfiles && ./make
+- name: Stow dotfiles (build the default target)
+  make:
+    chdir: ~/.dotfiles
