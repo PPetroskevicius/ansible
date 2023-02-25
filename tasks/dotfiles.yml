@@ -6,14 +6,12 @@
       - stow
 
 - name: Cloning dotfiles
-  ansible.builtin.git:
+  git:
     repo: "git@github.com:ppetroskevicius/dotfiles.git" 
-    dest: "~/.dotfiles"
+    dest: "~/dotfiles"
     key_file: "~/.ssh/id_ed25519"
-    recursive: yes
     update: yes
     accept_hostkey: yes
-    version: main
 
 - name: Remove old dotfiles
   file:
