@@ -1,12 +1,24 @@
 ---
-- name: Add a setting to ~/.gitconfig
+- name: Git - set email (adds a setting to ~/.gitconfig)
   git_config:
     name: user.email
     scope: global
-    value: "p.petroskevicius@gmail.com"
+    value: '{{ email }}'
 
-- name: Add a setting to ~/.gitconfig
+- name: Git - set name
   git_config:
     name: user.name
     scope: global
-    value: "Petras Petroskevicius"
+    value: '{{ fullname }}'
+
+- name: Git - rebase by defaul during pull 
+  git_config:
+    name: pull.rebase
+    scope: global
+    value: 'false'
+
+- name: Git - set vim as default editor 
+  git_config:
+    name: user.editor
+    scope: global
+    value: 'vim'

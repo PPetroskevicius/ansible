@@ -5,6 +5,8 @@
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     public_key: "https://github.com/ppetroskevicius.keys"
+    email: "p.petroskevicius@gmail.com"
+    fullname: "Petras Petroskevicius"
 
   tasks:
     - import_tasks: tasks/ssh.yml
